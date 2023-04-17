@@ -24,7 +24,7 @@ const unsplashLimiter = rateLimit({
 app.set('trust proxy', 1)
 
 app.use(
-  '/api/proxy/unsplash',
+  '/unsplash',
   unsplashLimiter,
   cache(process.env.UNSPLASH_API_CACHE_DURATION),
   unsplashRouter
