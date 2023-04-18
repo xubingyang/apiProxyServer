@@ -5,6 +5,7 @@ const apicache = require('apicache')
 require('dotenv').config()
 
 const unsplashRouter = require('./routes/unsplash')
+const homeRouter = require('./routes/home')
 
 const app = express()
 
@@ -23,6 +24,7 @@ const unsplashLimiter = rateLimit({
 
 app.set('trust proxy', 1)
 
+app.use('/', homeRouter)
 app.use(
   '/unsplash',
   unsplashLimiter,
